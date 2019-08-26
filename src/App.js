@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import BarChart from "./BarChart";
+import BarChart from "./components/BarChart";
 
 class App extends Component {
 
@@ -7,7 +7,6 @@ class App extends Component {
     data: [12, 5, 6, 6, 9, 10],
     width: 700,
     height: 500,
-    id: "root"
   };
 
   render() {
