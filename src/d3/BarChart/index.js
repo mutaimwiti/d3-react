@@ -1,9 +1,7 @@
 import * as d3 from "d3";
 
-export const drawChart = (props) => {
-  const {width, height} = props;
-
-  const data = [12, 5, 6, 6, 9, 20];
+export const drawChart = (data) => {
+  const {width, height, dataset} = data;
 
   const svg = d3.select("#barChart")
     .append("svg")
@@ -12,7 +10,7 @@ export const drawChart = (props) => {
     .attr("style", "display: block; margin: auto");
 
   svg.selectAll("rect")
-    .data(data)
+    .data(dataset)
     .enter()
     .append("rect")
     .attr("x", (d, i) => i * 120)
@@ -22,7 +20,7 @@ export const drawChart = (props) => {
     .attr("fill", "green");
 
   svg.selectAll("text")
-    .data(data)
+    .data(dataset)
     .enter()
     .append("text")
     .text((d) => d)
