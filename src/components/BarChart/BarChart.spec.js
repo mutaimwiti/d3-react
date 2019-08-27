@@ -9,6 +9,8 @@ describe('<BarChart/>', () => {
     height: 500,
   };
 
+  // drawChart.mockResolvedValue(undefined);
+
   beforeEach(() => {
     const wrapper = shallow(<BarChart {...props}/>);
   });

@@ -30,8 +30,13 @@
     ]
   },
   "devDependencies": {
-    "babel-jest": "^24.9.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,jsx}",
+      "!src/d3/**"
+    ]
   }
 }
