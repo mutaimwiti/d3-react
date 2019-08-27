@@ -1,18 +1,32 @@
 import React, {Component} from 'react';
-import BarChart from "../BarChart";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import AppContainer from "../AppContainer";
+import {routes, ProtectedRoute} from '../../router';
 
 class App extends Component {
-
-  state = {
-    data: [12, 5, 6, 6, 9, 10],
-    width: 700,
-    height: 500,
-  };
 
   render() {
     return (
       <div className="App">
-        <BarChart data={this.state.data} width={this.state.width} height={this.state.height}/>
+        <BrowserRouter>
+          <AppContainer>
+            <Switch>
+              {
+                routes.map(({protected: isProtected, exact, path, component}) => {
+                  if (isProtected) {
+                    return <ProtectedRoute
+                      exact={exact}
+                      path={path}
+                      component={component}
+                      key={path}
+                    />;
+                  }
+                  return <Route exact={exact} path={path} component={component} key={path}/>
+                })
+              }
+            </Switch>
+          </AppContainer>
+        </BrowserRouter>
       </div>
     );
   }
