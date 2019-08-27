@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "react-scripts test --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,8 +36,10 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/components/**/*.{js,jsx}",
-      "!src/d3/**"
+      "src/**/*.js",
+      "!src/d3/**",
+      "!src/index.js",
+      "!src/serviceWorker.js"
     ]
   }
 }
