@@ -1,13 +1,13 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow, mount} from '../../utils/enzyme';
 import BarChart from "./index";
 
 describe('<BarChart/>', () => {
   beforeEach(() => {
-    const wrapper = shallow(<BarChart/>);
+    const wrapper = mount(<BarChart/>);
   });
 
   it('should render without crashing', () => {
-    expect(() => mount(<BarChart/>)).not.toThrow();
+    expect(() => shallow(<BarChart/>)).not.toThrow();
   });
 });

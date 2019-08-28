@@ -1,16 +1,20 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, shallow} from '../../utils/enzyme';
 import {AppContainer} from '.';
 
 describe('<AppContainer/>', () => {
+  beforeEach(() => {
+    const wrapper = mount(<AppContainer/>);
+  });
+
   it('should render without crashing', () => {
-    expect(() => mount(<AppContainer/>)).not.toThrow();
+    expect(() => shallow(<AppContainer/>)).not.toThrow();
   });
 
   it('should render header and footer when authenticated', () => {
     localStorage.setItem("auth", JSON.stringify(true));
 
-    const wrapper = mount(<AppContainer/>);
+    const wrapper = shallow(<AppContainer/>);
 
     const text = wrapper.text();
 
