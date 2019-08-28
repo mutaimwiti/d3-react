@@ -1,16 +1,16 @@
 import React from 'react';
 import {shallow, mountWithRouter} from "../../utils/enzyme";
-import Home from ".";
+import HomePage from ".";
 
-describe('<Home/>', () => {
+describe('<HomePage/>', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mountWithRouter(<Home/>);
+    wrapper = mountWithRouter(<HomePage/>);
   });
 
   it('should render without crashing', () => {
-    expect(() => shallow(<Home/>)).not.toThrow();
+    expect(() => shallow(<HomePage/>)).not.toThrow();
   });
 
   it('should contain all links', () => {

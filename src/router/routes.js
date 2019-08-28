@@ -1,26 +1,27 @@
-import BarChart from '../components/BarChart';
-import Login from '../components/Login';
-import Home from '../components/Home';
+import HomePage from '../pages/HomePage';
+import LoginPage from '../pages/LoginPage';
+import ChartsPage from '../pages/ChartsPage';
+
 
 const routes = [
   {
-    path: '/bar-chart',
-    name: 'Bar Chart',
-    component: BarChart,
+    path: '/charts',
+    name: 'ChartsPage',
+    component: ChartsPage,
     exact: true,
     protected: true,
   },
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'HomePage',
+    component: HomePage,
     exact: true,
     protected: true,
   },
   {
     path: '/login',
-    name: 'Login',
-    component: Login,
+    name: 'LoginPage',
+    component: LoginPage,
     exact: true,
   },
 ];

@@ -1,15 +1,15 @@
 import React from 'react';
 import {shallow, mount} from "../../utils/enzyme";
-import Login from ".";
+import LoginForm from ".";
 
-describe('<Login/>', () => {
+describe('<LoginForm/>', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Login/>);
+    wrapper = mount(<LoginForm/>);
   });
 
   it('should render without crashing', () => {
-    expect(() => shallow(<Login/>)).not.toThrow();
+    expect(() => shallow(<LoginForm/>)).not.toThrow();
   });
 });

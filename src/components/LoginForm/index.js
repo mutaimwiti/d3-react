@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Auth from "../../utils/Auth";
 
-class Login extends Component {
+class LoginForm extends Component {
   handleClick = () => {
     const {history} = this.props;
     Auth.login(() => history.push('/'));
@@ -9,12 +9,11 @@ class Login extends Component {
 
   render() {
     return <div>
-      <h2>Login</h2>
-      <button onClick={() => this.handleClick}>
+      <button onClick={() => this.handleClick()}>
         Login
       </button>
     </div>
   }
 }
 
-export default Login;
+export default LoginForm;
