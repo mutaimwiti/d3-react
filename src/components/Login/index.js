@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import Auth from "../../utils/Auth";
 
 class Login extends Component {
+  handleClick = () => {
+    const {history} = this.props;
+    Auth.login(() => history.push('/'));
+  };
 
   render() {
-    const {history} = this.props;
-
     return <div>
       <h2>Login</h2>
-      <button onClick={() => Auth.login(() => history.push('/'))}>
+      <button onClick={() => this.handleClick}>
         Login
       </button>
     </div>
